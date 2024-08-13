@@ -1,7 +1,10 @@
-/*
-import java.util.Arrays;
 import java.util.Scanner;
 public class bubblesort {
+     static void printarr(int[]arr){
+          for(int i=0;i< arr.length;i++){
+               System.out.print(arr[i]+" ");
+          }
+     }
      static void sortedarr(int[] arr,int idx){
           boolean flag=false;
           for(int i=0;i<arr.length-1;i++){
@@ -14,11 +17,11 @@ public class bubblesort {
                     }
                }
                if(flag==false){
-                    System.out.println(Arrays.toString(arr));
+                    printarr(arr);
                     return;
                }
           }
-          System.out.println(Arrays.toString(arr));
+          printarr(arr);
      }
      public static void main(String[] args) {
           Scanner sc =new Scanner(System.in);
@@ -32,4 +35,3 @@ public class bubblesort {
           sortedarr(arr,0);
      }
 }
-*/
