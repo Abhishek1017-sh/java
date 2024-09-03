@@ -1,4 +1,6 @@
-/*public class countsort {
+/*import java.util.Arrays;
+
+public class countsort {
     static int max(int[] arr){
         int m=arr[0];
         for(int i=1;i< arr.length;i++){
@@ -10,7 +12,7 @@
     }
     static void sortedarr(int[] arr,int a){
         int[] count=new int[a+1];
-        for(int i=0;i<a+1;i++) {
+        *//*for(int i=0;i<a+1;i++) {
             int c=0;
             for (int j = 0; j < arr.length; j++) {
                 if (i == arr[j]) {
@@ -18,6 +20,9 @@
                 }
             }
             count[i]=c;
+        }*//*
+        for(int i=0;i<arr.length;i++){
+            count[arr[i]]++;
         }
         ansarray(count,arr.length,arr);
     }
