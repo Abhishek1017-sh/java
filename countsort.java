@@ -1,5 +1,4 @@
-/*import java.util.Arrays;
-
+/*
 public class countsort {
     static int max(int[] arr){
         int m=arr[0];
@@ -12,30 +11,27 @@ public class countsort {
     }
     static void sortedarr(int[] arr,int a){
         int[] count=new int[a+1];
-        *//*for(int i=0;i<a+1;i++) {
-            int c=0;
-            for (int j = 0; j < arr.length; j++) {
-                if (i == arr[j]) {
-                    c++;
-                }
-            }
-            count[i]=c;
-        }*//*
         for(int i=0;i<arr.length;i++){
             count[arr[i]]++;
         }
+        printarr(count);
+        for(int i=0;i<count.length-1;i++){
+            count[i+1]=count[i]+count[i+1];
+        }
+        System.out.println();
+        System.out.println("prefix sum array of count array:");
+        printarr(count);
         ansarray(count,arr.length,arr);
     }
     static void ansarray(int[] count,int n,int[]arr){
-        int k=0;
-        for(int i=0;i< count.length;i++){
-            while(count[i]!=0){
-                arr[k]=i;
-                k++;
-                count[i]--;
-            }
+        int[] output=new int[arr.length];
+        for(int i=arr.length-1;i>=0;i--){
+            output[count[arr[i]]-1]=arr[i];
+            count[arr[i]]--;
         }
-        printarr(arr);
+        System.out.println();
+        System.out.println("final ans after doing inplace:");
+        printarr(output);
     }
     static void printarr(int[] arr){
         for(int i=0;i<arr.length;i++){
@@ -43,7 +39,7 @@ public class countsort {
         }
     }
     public static void main(String[] args) {
-        int[] arr={4,3,1,5,3,1,3,5};
+        int[] arr={0,1,1,1,1,1,6,7,54,7,7,5};
         int a=max(arr);
         sortedarr(arr,a);
     }
